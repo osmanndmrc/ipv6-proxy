@@ -9,8 +9,8 @@ WORKDATA="${WORKDIR}/data.txt"
 mkdir $WORKDIR && cd $_
 
 IP4=$(curl -4 -s ifconfig.co)
-IP6=$(curl -6 -s ifconfig.co | cut -f1-2 -d':')
-#IP6="2a0a:fa47"
+#IP6=$(curl -6 -s ifconfig.co | cut -f1-2 -d':')
+IP6="2a0a:fa47"
 
 echo "Internal ip = ${IP4}. Exteranl sub for ip6 = ${IP6}"
 
