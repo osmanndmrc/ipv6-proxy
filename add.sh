@@ -50,7 +50,7 @@ EOF
 
 gen_ifconfig() {
     cat <<EOF
-$(awk -F "/" '{print "ifconfig eth0 inet6 add " $5 "/64"}' ${WORKDATA})
+$(awk -F "/" '{print "ifconfig ens32 inet6 add " $5 "/64"}' ${WORKDATA})
 EOF
 }
 
@@ -60,8 +60,8 @@ WORKDATA="${WORKDIR}/data.txt"
 mkdir $WORKDIR && cd $_
 
 IP4=$(curl -4 -s ifconfig.co)
-IP6=$(curl -6 -s ifconfig.co | cut -f1-2 -d':')
-#IP6="2a0a:fa47"
+#IP6=$(curl -6 -s ifconfig.co | cut -f1-2 -d':')
+IP6="2a0a:fa47"
 
 echo "Internal ip = ${IP4}. Exteranl sub for ip6 = ${IP6}"
 
